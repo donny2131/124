@@ -1,10 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = ".";
+var prefix = "#";
 client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
   message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
@@ -18,12 +17,12 @@ client.on("message", message => {
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
+      console.log(`Desert Bot- Script By : me`);
         console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : me ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`edgeeee.`,"http://twitch.tv/S-F")
+client.user.setGame(`edgeee`,"http://twitch.tv/S-F")
 client.user.setStatus("dnd")
 });
 
