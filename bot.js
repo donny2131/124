@@ -34,7 +34,7 @@ message.channel.sendMessage('Sending...')
 client.users.forEach(m =>{
 m.sendMessage(args)
 })
-})
+}
 });
 
 client.login(process.env.BOT_TOKEN);
