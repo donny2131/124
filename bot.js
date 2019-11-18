@@ -9,7 +9,7 @@ client.on("message", message => {
   message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
  m.send(`${argresult}\n ${m}`);
 })
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
+message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : :ballot_box_with_check: | Done ... The Broadcast Message Has Been Sent For`); 
  message.delete(); 
 };     
 });
