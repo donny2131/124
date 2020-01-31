@@ -4,12 +4,13 @@ var prefix = "#";
 client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
   message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
  m.send(`${argresult}\n ${m}`);
 })
-message.channel.send( :ballot_box_with_check: **| Done ... The Broadcast Message Has Been Sent For**${message.guild.members.filter(m => m.presence.status !== 'online').size}\`\`); 
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
  message.delete(); 
 };     
 });
@@ -17,24 +18,14 @@ message.channel.send( :ballot_box_with_check: **| Done ... The Broadcast Message
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`Desert Bot- Script By : me`);
+      console.log(`Desert Bot- Script By : i1Suhaib`);
         console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : me ' `);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`edgeee`,"http://twitch.tv/S-F")
-client.user.setStatus("dnd")
+client.user.setGame(``,"http://twitch.tv/S-F")
+client.user.setStatus("idle")
 });
 
-client.on('message', message => {
-    if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith(prefix + "bcall")){
-message.channel.sendMessage('Sending...')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
 
 client.login(process.env.BOT_TOKEN);
